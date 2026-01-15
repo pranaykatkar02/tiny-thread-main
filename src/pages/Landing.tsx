@@ -323,7 +323,7 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="inline-block bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full mb-6 border border-primary/20 shadow-sm">
-              <span className="hero-badge">New Collection 2024</span>
+              <span className="hero-badge">New Collection 2026</span>
             </div>
             <h1 className="text-7xl md:text-8xl xl:text-9xl font-heading hero-title mb-8 drop-shadow-sm">
               {HERO_SLIDES[0].title}
@@ -667,7 +667,7 @@ const NewsletterSection = () => {
                 placeholder="Enter your email address"
                 className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 focus:border-primary focus:outline-none text-lg bg-gray-50"
               />
-              <Button className=" bg-pink-400 text-white hover:bg-primary/90 rounded-full px-8 py-6 text-lg shadow-lg">
+              <Button className="bg-pink-400 text-white hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                 Subscribe
               </Button>
             </div>

@@ -1,46 +1,85 @@
+import { Link } from "react-router-dom";
 import SocialMediaFooter from "./SocialMediaFooter";
-import { HiChevronDown } from "react-icons/hi2";
-
 
 const Footer = () => {
   return (
-    <>
+    <footer className="bg-white border-t border-gray-200">
+      {/* optional social strip (keep if you have the component) */}
       <SocialMediaFooter />
-      <footer className="max-w-screen-2xl mx-auto border-b-8 border-secondaryBrown px-5 max-[400px]:px-3">
-        <div className="flex justify-center gap-24 text-center mt-12 max-[800px]:flex-col max-[800px]:gap-10">
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold max-sm:text-xl">Client Service</h3>
-            <p className="text-lg max-sm:text-base">After-sale Service</p>
-            <p className="text-lg max-sm:text-base">Free Insurance</p>
+
+      <div className="w-full mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand / Description */}
+          <div>
+            <Link to="/" className="inline-block mb-4">
+              <h3 className="font-heading text-2xl text-pink-500">
+                Tiny Threads
+              </h3>
+            </Link>
+            <p className="text-sm text-gray-600 max-w-xs">
+              Dress up your little ones in magical themed outfits that spark
+              imagination and joy.
+            </p>
           </div>
 
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold max-sm:text-xl">Our Brand</h3>
-            <p className="text-lg max-sm:text-base">The Company</p>
-            <p className="text-lg max-sm:text-base">The Excellence</p>
-            <p className="text-lg max-sm:text-base">International Awards</p>
-            <p className="text-lg max-sm:text-base">Our Story</p>
+          {/* Shop */}
+          <div>
+            <h4 className="text-base font-semibold text-gray-800 mb-3">Shop</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>
+                <Link to="/store" className="hover:text-pink-500">
+                  All Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/cart" className="hover:text-pink-500">
+                  Shopping Cart
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold max-sm:text-xl">Luxury Clothing</h3>
-            <p className="text-lg max-sm:text-base">Special Edition</p>
-            <p className="text-lg max-sm:text-base">Summer Edition</p>
-            <p className="text-lg max-sm:text-base">Unique Collection</p>
+          {/* Account */}
+          <div>
+            <h4 className="text-base font-semibold text-gray-800 mb-3">
+              Account
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>
+                <Link to="/login" className="hover:text-pink-500">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link to="/register" className="hover:text-pink-500">
+                  Register
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-base font-semibold text-gray-800 mb-3">
+              Contact
+            </h4>
+            <p className="text-sm text-gray-600">
+              Email: hello@tinythreads.com
+            </p>
+            <p className="text-sm text-gray-600 mt-1">
+              Phone: +1 (555) 123-4567
+            </p>
           </div>
         </div>
-        <div className="flex flex-col gap-8 my-20">
-          <p className="flex justify-center items-center text-2xl gap-2 max-sm:text-xl">Worldwide / English <HiChevronDown /></p>
-          <h2 className="text-6xl font-light text-center max-sm:text-5xl">FASHION</h2>
-          <p className="text-base text-center max-sm:text-sm">All rights reserved ©2024</p>
-          <ul className="flex justify-center items-center gap-7 text-base max-sm:text-sm max-[350px]:flex-col max-[350px]:gap-5">
-            <li>Cookie Policy</li>
-            <li>Privacy Policy</li>
-            <li>Legal Notes</li>
-          </ul>
+
+        <div className="mt-10 border-t pt-6">
+          <p className="text-center text-sm text-gray-500">
+            © 2026 Tiny Threads. All rights reserved.
+          </p>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
+
 export default Footer;

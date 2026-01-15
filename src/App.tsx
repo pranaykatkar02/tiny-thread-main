@@ -1,92 +1,22 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import {
-  Cart,
-  Checkout,
-  HomeLayout,
-  Landing,
-  Login,
-  OrderConfirmation,
-  OrderHistory,
-  Register,
-  Search,
-  Shop,
-  SingleOrderHistory,
-  SingleProduct,
-  UserProfile,
-} from "./pages";
-import { checkoutAction, searchAction } from "./actions/index";
-import { shopCategoryLoader } from "./pages/Shop";
-import { loader as orderHistoryLoader } from "./pages/OrderHistory";
-import { loader as singleOrderLoader } from "./pages/SingleOrderHistory";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeLayout from "./pages/HomeLayout";
+import Landing from "./pages/Landing";
+// import Store from "./pages/Store";
+// import About from "./pages/About";
+// import Contact from "./pages/Contact";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomeLayout />,
-    children: [
-      {
-        index: true,
-        element: <Landing />,
-      },
-      {
-        path: "shop",
-        element: <Shop />,
-      },
-      {
-        path: "shop/:category",
-        element: <Shop />,
-        loader: shopCategoryLoader,
-      },
-      {
-        path: "product/:id",
-        element: <SingleProduct />,
-      },
-      {
-        path: "cart",
-        element: <Cart />,
-      },
-      {
-        path: "checkout",
-        element: <Checkout />,
-        action: checkoutAction,
-      },
-      {
-        path: "search",
-        action: searchAction,
-        element: <Search />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "order-confirmation",
-        element: <OrderConfirmation />,
-      },
-      {
-        path: "user-profile",
-        element: <UserProfile />,
-      },
-      {
-        path: "order-history",
-        element: <OrderHistory />,
-        loader: orderHistoryLoader,
-      },
-      {
-        path: "order-history/:id",
-        element: <SingleOrderHistory />,
-        loader: singleOrderLoader
-      },
-    ],
-  },
-]);
-
-function App() {
-  return <RouterProvider router={router} />;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<HomeLayout />}>
+          <Route index element={<Landing />} />
+          {/* <Route path="store/*" element={<Store />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App;
